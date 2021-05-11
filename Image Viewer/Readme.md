@@ -25,11 +25,11 @@ As like tkinter os is also a predefined module so you don’t need to install it
 ## Output Image
 
 ### Output 1:
-<p align="center">  <img width="400" height="300" src="https://github.com/yogeshsinghgit/Tkinter-Projects/blob/main/Image%20Viewer/image-viewer-1.pn"> 
+<p align="center">  <img width="400" height="300" src="https://github.com/yogeshsinghgit/Tkinter-Projects/blob/main/Image%20Viewer/image-viewer-1.png"> 
 </p>
 
 ### Output 2:
-<p align="center">  <img width="400" height="300" src="ttps://github.com/yogeshsinghgit/Tkinter-Projects/blob/main/Image%20Viewer/image-viewer-2.png"> 
+<p align="center">  <img width="400" height="300" src="https://github.com/yogeshsinghgit/Tkinter-Projects/blob/main/Image%20Viewer/image-viewer-2.png"> 
 </p>
 
 ## Contribution
