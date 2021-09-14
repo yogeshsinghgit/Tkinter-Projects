@@ -1,7 +1,6 @@
 ##  Dictionary App Using Python Tkinter
 
 ![GUI Image ](https://github.com/yogeshsinghgit/Tkinter-Projects/blob/main/DictionaryApp/dictionaryapp.py)
-<img src="https://github.com/yogeshsinghgit/Tkinter-Projects/blob/main/DictionaryApp/dictionaryapp.py">GUI Image</img>
 
 This is a simple Dictionary Application which displays the meaning of words.
 
