@@ -1,40 +1,46 @@
-# Instagram @dynamic.coding
-import tkinter as tk
+from tkinter import *
+class Calc:
+	def __init__(self,master):
+		self.MathVariable = 0
+		self.Value = 0
+		self.master = master
+ 
+		self.NumberEntry = Entry(self.master, width=40, borderwidth=5,justify=CENTER)
+		self.NumberEntry.grid(row=0, column=0, padx=10, pady=10, columnspan=5)
+		i,j=1,0
+		for btn in ['1','2','3','4','5','6','7','8','9','+','-','0','*','/','=']:
+			if i%4==0:
+				i=1
+				j+=1
+			Button(self.master,text=btn, width=5,command=lambda num =btn:self.BtnClick(num)).grid(row=i, column=j,ipadx=4)
+			i+=1
+		self.clear = Button(self.master,text='Clear', width=15,command=self.Clear).grid(row=5, columnspan=6,ipadx=70)
+ 
+	def BtnClick(self, number):
+		if number == '=':
+			self.Equal()
+		else:
+			self.NumberEntry.insert(len(self.NumberEntry.get()) + 1, str(number))
+	def Equal(self):
+		value1 = self.NumberEntry.get()
+		try:
+			value1 = eval(value1)
+			self.NumberEntry.delete(0, END)
+			self.NumberEntry.insert(0, value1)
+		except Exception as e:
+			self.NumberEntry.delete(0, END)
+			self.NumberEntry.insert(0, e)
 
-def buttonPressed(i):
-    if i != '=':
-        entry.insert(tk.END,i)
-    else:
-        expression = entry.get()
-        try:
-            value = eval(expression)
-            new_string = f'{value: ,}'
-            entry.delete(0, tk.END)
-            entry.insert(0, new_string)
-        except Exception as e:
-            entry.delete(0,tk.END)
-            entry.insert(0,e)
 
-root = tk.Tk()
-root.title("Calculator")
-
-entry = tk.Entry(root,width=26,borderwidth=5,font=('arial',12))
-entry.grid(row=0,column=0,padx=10,pady=10,columnspan=5)
-
-btn_frame = tk.Frame(root,width=40,height=100)
-btn_frame.grid(row=1,columnspan=5)
-
-Button_Text = ['7','8','9','/' ,'*', 
-'4','5','6','-','+','0','1','2','3','=']
-i=j=0
-for x in Button_Text:
-    b = tk.Button(btn_frame ,width=5,text=x, command= lambda x = x: buttonPressed(x))
-    b.grid(row=i,column=j,ipadx=2,ipady=4)
-    j+=1
-    if j==5:
-        i+=1
-        j=0
-del_btn = tk.Button(root,text='Clear',width=30,command=lambda: entry.delete(0,tk.END))
-del_btn.grid(row=2,columnspan=5,ipadx=5,ipady=4)
-
-root.mainloop()
+	def Clear(self):
+		self.NumberEntry.delete(0, END)
+		self.Value = 0
+ 
+if __name__ == "__main__":
+    master = Tk()
+    master.title('Calculator')
+    master.iconbitmap('icon.ico')
+    master.geometry('272x155')
+    master.resizable(0,0)
+    Calc(master)
+    master.mainloop()
